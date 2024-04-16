@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className="navbar  text-white py-4 px-6 flex justify-between items-center" >
       <div className="logo flex items-center font-bold gap-2 ml-10">
         <img src="logo.svg" alt="" />
-        <span className='text-2xl'>lamadmin</span>
+        <span className='text-2xl'>AmatShop</span>
       </div>
       <div className="icons flex items-center gap-6">
         <FontAwesomeIcon icon={faSearch} className="icon hidden sm:block" />
