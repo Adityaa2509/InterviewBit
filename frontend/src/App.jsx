@@ -12,6 +12,9 @@ import Menu from './components/Menu';
 import Users from './components/Users';
 import User from './components/User';
 import Products from './components/Product';
+import OrderTable from './components/Orders';
+import WorldMap from './components/Wp';
+import Wp from './components/Wp';
 
 function App() {
   const mode = useSelector((state) => state.themeToggler.mode);
@@ -40,6 +43,8 @@ function App() {
               <Route path='/users' element={<Users />} />
               <Route path='/users/:id' element={<User />} />
               <Route path='/products' element={<Products />} />
+              <Route path='/orders' element={<OrderTable />} />
+              <Route path='/maps' element={<Wp />} />
               
             </Routes>
           </div>

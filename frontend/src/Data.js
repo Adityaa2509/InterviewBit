@@ -110,6 +110,80 @@ export const menu = [
   },
 ];
 
+export const orderRows = [
+  {
+    id: 1,
+    customer: "John Doe",
+    date: "2024-04-20",
+    amount: "$150.00",
+    status: "Completed"
+  },
+  {
+    id: 2,
+    customer: "Jane Smith",
+    date: "2024-04-21",
+    amount: "$200.00",
+    status: "Processing"
+  },
+  {
+    id: 3,
+    customer: "Alice Johnson",
+    date: "2024-04-22",
+    amount: "$100.00",
+    status: "Pending"
+  },
+  {
+    id: 4,
+    customer: "Bob Brown",
+    date: "2024-04-23",
+    amount: "$75.00",
+    status: "Completed"
+  },
+  {
+    id: 5,
+    customer: "Emily Davis",
+    date: "2024-04-24",
+    amount: "$250.00",
+    status: "Completed"
+  },
+  {
+    id: 6,
+    customer: "Michael Wilson",
+    date: "2024-04-25",
+    amount: "$180.00",
+    status: "Processing"
+  },
+  {
+    id: 7,
+    customer: "Sophia Martinez",
+    date: "2024-04-26",
+    amount: "$90.00",
+    status: "Pending"
+  },
+  {
+    id: 8,
+    customer: "Oliver Anderson",
+    date: "2024-04-27",
+    amount: "$120.00",
+    status: "Processing"
+  },
+  {
+    id: 9,
+    customer: "Emma Taylor",
+    date: "2024-04-28",
+    amount: "$300.00",
+    status: "Pending"
+  },
+  {
+    id: 10,
+    customer: "William Garcia",
+    date: "2024-04-29",
+    amount: "$95.00",
+    status: "Completed"
+  }
+];
+
+
 export const topDealUsers = [
   {
     id: 1,
@@ -117,6 +191,7 @@ export const topDealUsers = [
     username: "Elva McDonald",
     email: "elva@gmail.com",
     amount: "3.668",
+    country: "United States",
   },
   {
     id: 2,
@@ -124,6 +199,7 @@ export const topDealUsers = [
     username: "Linnie Nelson",
     email: "linnie@gmail.com",
     amount: "3.256",
+    country: "United States",
   },
   {
     id: 3,
@@ -131,6 +207,7 @@ export const topDealUsers = [
     username: "Brent Reeves",
     email: "brent@gmail.com",
     amount: "2.998",
+    country: "India",
   },
   {
     id: 4,
@@ -138,6 +215,7 @@ export const topDealUsers = [
     username: "Adeline Watson",
     email: "adeline@gmail.com",
     amount: "2.512",
+    country: "India",
   },
   {
     id: 5,
@@ -145,6 +223,7 @@ export const topDealUsers = [
     username: "Juan Harrington",
     email: "juan@gmail.com",
     amount: "2.134",
+    country: "India",
   },
   {
     id: 6,
@@ -152,6 +231,7 @@ export const topDealUsers = [
     username: "Augusta McGee",
     email: "augusta@gmail.com",
     amount: "1.932",
+    country: "France",
   },
   {
     id: 7,
@@ -159,8 +239,74 @@ export const topDealUsers = [
     username: "Angel Thomas",
     email: "angel@gmail.com",
     amount: "1.560",
+    country: "France",
+  },
+  {
+    id: 8,
+    img: "https://images.pexels.com/photos/239822/pexels-photo-239822.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    username: "Rahul Sharma",
+    email: "rahul@gmail.com",
+    amount: "4.250",
+    country: "India",
+  },
+  {
+    id: 9,
+    img: "https://images.pexels.com/photos/769772/pexels-photo-769772.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    username: "Sophie Martin",
+    email: "sophie@gmail.com",
+    amount: "3.890",
+    country: "Germany",
+  },
+  {
+    id: 10,
+    img: "https://images.pexels.com/photos/38237/pexels-photo-38237.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    username: "Lucas Johnson",
+    email: "lucas@gmail.com",
+    amount: "2.340",
+    country: "United Kingdom",
+  },
+  {
+    id: 11,
+    img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    username: "Marcela Diaz",
+    email: "marcela@gmail.com",
+    amount: "3.765",
+    country: "Spain",
+  },
+  {
+    id: 12,
+    img: "https://images.pexels.com/photos/2129/water-blue-ocean.jpg?auto=compress&cs=tinysrgb&w=1600",
+    username: "Hugo Moreau",
+    email: "hugo@gmail.com",
+    amount: "2.980",
+    country: "France",
+  },
+  {
+    id: 13,
+    img: "https://images.pexels.com/photos/244470/pexels-photo-244470.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    username: "Emma Müller",
+    email: "emma@gmail.com",
+    amount: "4.512",
+    country: "Germany",
+  },
+  {
+    id: 14,
+    img: "https://images.pexels.com/photos/287681/pexels-photo-287681.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    username: "Luca Romano",
+    email: "luca@gmail.com",
+    amount: "2.345",
+    country: "Italy",
+  },
+  {
+    id: 15,
+    img: "https://images.pexels.com/photos/132472/pexels-photo-132472.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    username: "Yui Tanaka",
+    email: "yui@gmail.com",
+    amount: "1.980",
+    country: "Japan",
   },
 ];
+
 
 export const chartBoxUser = {
   color: "#8884d8",

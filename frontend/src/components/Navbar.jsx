@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBell, faUser, faCog } from '@fortawesome/free-solid-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'; // Example of using a brand icon
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'; 
 
 const Navbar = () => {
   return (
@@ -24,7 +24,7 @@ const Navbar = () => {
             alt=""
             className="w-6 h-6 rounded-full"
           />
-          <span>Jane</span>
+          <span>Love Sharma</span>
         </div>
         <FontAwesomeIcon icon={faCog} className="icon hidden sm:block" />
       </div>

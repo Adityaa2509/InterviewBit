@@ -1,93 +1,85 @@
 import React, { useState } from "react";
-import DataTable from "./DataTable";
 import Add from "./Add";
-import styled from "styled-components";
 import { userRows } from "../Data";
 
-const UsersWrapper = styled.div`
-  .info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #191F45;
-    border-bottom: 1px solid #ccc;
-  }
-
-  .info h1 {
-    font-size: 48px;
-    margin: 0;
-  }
-
-  .add-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .add-button:hover {
-    background-color: #0056b3;
-  }
-`;
-
-const columns = [
-  { accessor: "id", Header: "ID", width: 90 },
-  {
-    accessor: "img",
-    Header: "Avatar",
-    width: 100,
-    Cell: ({ row }) => {
-      return <img src={row.original.img || "/noavatar.png"} alt="" />;
-    },
-  },
-  {
-    accessor: "firstName",
-    Header: "First name",
-    width: 150,
-  },
-  {
-    accessor: "lastName",
-    Header: "Last name",
-    width: 150,
-  },
-  {
-    accessor: "email",
-    Header: "Email",
-    width: 200,
-  },
-  {
-    accessor: "phone",
-    Header: "Phone",
-    width: 200,
-  },
-  {
-    accessor: "createdAt",
-    Header: "Created At",
-    width: 200,
-  },
-  {
-    accessor: "verified",
-    Header: "Verified",
-    width: 150,
-    Cell: ({ value }) => (value ? "Yes" : "No"), // Assuming "verified" is a boolean field
-  },
-];
+const PAGE_SIZE = 5;
 
 const Users = () => {
   const [open, setOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const totalPages = Math.ceil(userRows.length / PAGE_SIZE);
+
+  const nextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages - 1));
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
+  };
+
+  const getPageRows = () => {
+    const startIndex = currentPage * PAGE_SIZE;
+    const endIndex = startIndex + PAGE_SIZE;
+    return userRows.slice(startIndex, endIndex);
+  };
 
   return (
-    <UsersWrapper>
-      <div className="info">
-        <h1 className="text-4xl">Users</h1>
-        
+    <div className="container mx-auto py-8">
+      <div className=" text-center py-4">
+        <h1 className="text-4xl text-white">Users</h1>
       </div>
-      <DataTable slug="users" columns={columns} rows={userRows} />
-      {open && <Add slug="user" columns={columns} setOpen={setOpen} />}
-    </UsersWrapper>
+      <div className="overflow-x-auto">
+        <table className="table-auto w-full">
+          <thead>
+            <tr className="bg-gray-200 text-[#21295c]">
+              <th className="px-4 py-2">ID</th>
+              <th className="px-4 py-2">Avatar</th>
+              <th className="px-4 py-2">First name</th>
+              <th className="px-4 py-2">Last name</th>
+              <th className="px-4 py-2">Email</th>
+              <th className="px-4 py-2">Phone</th>
+              <th className="px-4 py-2">Created At</th>
+              <th className="px-4 py-2">Verified</th>
+            </tr>
+          </thead>
+          <tbody>
+            {getPageRows().map((row, index) => (
+              <tr key={index} className="border-b border-gray-200">
+                <td className="px-4 py-2">{row.id}</td>
+                <td className="px-4 py-2">
+                  <img src={row.img || "/noavatar.png"} alt="" className="w-12 h-12 object-cover rounded" />
+                </td>
+                <td className="px-4 py-2">{row.firstName}</td>
+                <td className="px-4 py-2">{row.lastName}</td>
+                <td className="px-4 py-2">{row.email}</td>
+                <td className="px-4 py-2">{row.phone}</td>
+                <td className="px-4 py-2">{row.createdAt}</td>
+                <td className="px-4 py-2">{row.verified ? 'Yes' : 'No'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="flex justify-between mt-6">
+        <button
+          onClick={prevPage}
+          disabled={currentPage === 0}
+          className="px-4 py-2  rounded-md bg-gray-200  text-[#21295c]
+         "
+        >
+          Previous
+        </button>
+        <button
+          onClick={nextPage}
+          disabled={currentPage === totalPages - 1}
+          className="px-4 py-2  rounded-md bg-gray-200  text-[#21295c]"
+        >
+          Next
+        </button>
+      </div>
+      {open && <Add slug="user" setOpen={setOpen} />}
+    </div>
   );
 };
 
